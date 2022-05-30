@@ -19,6 +19,7 @@ func Init(t testing.TestingT, options *Options) string {
 func InitE(t testing.TestingT, options *Options) (string, error) {
 	args := []string{"init", fmt.Sprintf("-upgrade=%t", options.Upgrade)}
 
+	args = append(args, fmt.Sprintf(" --env %s", options.TfEnv))
 	// Append reconfigure option if specified
 	if options.Reconfigure {
 		args = append(args, "-reconfigure")

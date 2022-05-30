@@ -60,8 +60,6 @@ func FormatArgs(options *Options, args ...string) []string {
 		terraformArgs = append(terraformArgs, FormatTerraformArgs("-var-file", options.VarFiles)...)
 	}
 
-	terraformArgs = append(terraformArgs, fmt.Sprintf(" --env %s", options.TfEnv))
-
 	terraformArgs = append(terraformArgs, FormatTerraformArgs("-target", options.Targets)...)
 
 	if options.NoColor {
